@@ -8,7 +8,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AutenticacionRoutes } from './autenticacacion.routing'
 
-import { LoginComponent } from './login/login.component';
+
 
 
 @NgModule({
@@ -23,10 +23,6 @@ import { LoginComponent } from './login/login.component';
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule
-  ],
-  declarations: [
-    LoginComponent,
-
   ]
 })
 
