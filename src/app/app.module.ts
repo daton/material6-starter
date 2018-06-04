@@ -2,7 +2,7 @@ import * as $ from 'jquery';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { CommonModule }                             from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { AppRoutes } from './app.routing';
@@ -14,9 +14,11 @@ import { AppHeaderComponent } from './layouts/full/header/header.component';
 import { AppSidebarComponent } from './layouts/full/sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule} from './demo-material-module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from './shared/shared.module';
 import { SpinnerComponent } from './shared/spinner.component';
+import { LoginComponent } from './autenticacion/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { SpinnerComponent } from './shared/spinner.component';
     FullComponent,
     AppHeaderComponent,
     SpinnerComponent,
-    AppSidebarComponent  
+    AppSidebarComponent,
+    LoginComponent  
   ],
   imports: [
     BrowserModule,
@@ -33,15 +36,20 @@ import { SpinnerComponent } from './shared/spinner.component';
     FormsModule,
     FlexLayoutModule,  
     HttpClientModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     SharedModule,  
     RouterModule.forRoot(AppRoutes)  
   ],
+
   providers: [
   {
     provide: LocationStrategy,
     useClass: HashLocationStrategy
   }
   ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
